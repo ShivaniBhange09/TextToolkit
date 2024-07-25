@@ -6,7 +6,7 @@ import About from "./components/About";
 import React, { useState } from "react";
 import Alert from "./components/Alert";
 
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState(`light`); // Whether dark mode is enable or not
@@ -41,20 +41,20 @@ function App() {
       setMode(`dark`);
       document.body.style.backgroundColor = "#020334";
       showAlert(`Dark mode has been enabled`, "success");
-      //document.title = "TextUtils - Dark Mode";
+      //document.title = "TextToolKit - Dark Mode";
     } else {
       setMode(`light`);
       document.body.style.backgroundColor = "white";
       showAlert(`Light mode has been enabled`, "success");
-      // document.title = "TextUtils - Light Mode";
+      // document.title = "TextToolKit - Light Mode";
     }
   };
 
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
         <Navbar
-          title="TextUtils"
+          title="TextToolKit"
           aboutText="About Us"
           mode={mode}
           toggleMode={toggleMode}
@@ -71,14 +71,14 @@ function App() {
               element={
                 <TextForm
                   showAlert={showAlert}
-                  heading="Try TextUtils - Word Counter,Character Counter,Remove Extra Spaces "
+                  heading="Try TextToolKit - Word Counter,Character Counter,Remove Extra Spaces "
                   mode={mode}
                 />
               }
             />
           </Routes>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
