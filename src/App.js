@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/TextToolkit">
         <Navbar
           title="TextToolKit"
           aboutText="About Us"
